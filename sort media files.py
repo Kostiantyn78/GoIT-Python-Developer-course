@@ -18,11 +18,7 @@ def main():
         TRANS[ord(letter_cyr)] = letter_trans
         TRANS[ord(letter_cyr.upper())] = letter_trans.upper()
 
-    path_to_sort_foulder = r'C:\Users\BigPC\Desktop\Мотлох'
-    # path = r'C:\Users\BigPC\Desktop\Мотлох'
-
-    # path_to_sort_foulder = fr'c:\Users{sys.argv[1]}'
-    # path = fr'c:\Users{sys.argv[1]}'
+    path_to_sort_foulder = fr'c:\Users{sys.argv[1]}'
 
     dest_dirs = ['images', 'video', 'audio', 'documents', 'archives']
     work_extension = {'images': ('.JPEG', '.PNG', '.JPG', '.SVG'),
