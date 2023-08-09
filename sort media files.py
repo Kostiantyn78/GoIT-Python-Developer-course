@@ -41,7 +41,7 @@ def main():
 
             elif path_element.suffix.upper() in work_extension['video']:
                 try:
-                    shutil.move(path_element, r'C:\Users\BigPC\Desktop\Мотлох\video')
+                    shutil.move(path_element, rf'{path_to_sort_foulder}\video')
                     found_extension.add(path_element.suffix)
                     sorted_files.setdefault('video', []).append(path_element.name)
                 except shutil.Error as error:
@@ -49,7 +49,7 @@ def main():
 
             elif path_element.suffix.upper() in work_extension['images']:
                 try:
-                    shutil.move(path_element, r'C:\Users\BigPC\Desktop\Мотлох\images')
+                    shutil.move(path_element, rf'{path_to_sort_foulder}\images')
                     found_extension.add(path_element.suffix)
                     sorted_files.setdefault('images', []).append(path_element.name)
                 except shutil.Error as error:
@@ -57,7 +57,7 @@ def main():
 
             elif path_element.suffix.upper() in work_extension['audio']:
                 try:
-                    shutil.move(path_element, r'C:\Users\BigPC\Desktop\Мотлох\audio')
+                    shutil.move(path_element, rf'{path_to_sort_foulder}\audio')
                     found_extension.add(path_element.suffix)
                     sorted_files.setdefault('audio', []).append(path_element.name)
                 except shutil.Error as error:
@@ -65,7 +65,7 @@ def main():
 
             elif path_element.suffix.upper() in work_extension['documents']:
                 try:
-                    shutil.move(path_element, r'C:\Users\BigPC\Desktop\Мотлох\documents')
+                    shutil.move(path_element, rf'{path_to_sort_foulder}\documents')
                     found_extension.add(path_element.suffix)
                     sorted_files.setdefault('documents', []).append(path_element.name)
                 except shutil.Error as error:
