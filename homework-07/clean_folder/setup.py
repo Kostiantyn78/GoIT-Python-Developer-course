@@ -5,7 +5,7 @@ setup(
     name='clean',
     version='1.0.1',
     description='Sorts files by type (extension) by moving them to the associated folders',
-    url='https://github.com/',
+    url='https://github.com/Kostiantyn78/GoIT-Python-Developer-course/tree/master/homework-07/clean_folder',
     author='Kostiantyn Horishnii',
     author_email='ksgorishniy@gmail.com',
     license='MIT',
