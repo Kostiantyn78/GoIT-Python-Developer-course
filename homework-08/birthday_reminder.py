@@ -1,40 +1,33 @@
 import datetime
-import random
 
-users = [{'Олег': datetime.date(2023, 8, 24)}, {'Катерина': datetime.date(2023, 9, 6)},
-         {'Олександр': datetime.date(2023, 9, 3)}, {'Тетяна': datetime.date(2023, 8, 29)},
-         {'Дмитро': datetime.date(2023, 8, 18)}, {'Антон': datetime.date(2023, 8, 19)},
-         {'Віктор': datetime.date(2023, 8, 20)}, {'Марія': datetime.date(2023, 8, 17)},
-         {'Генадій': datetime.date(2023, 9, 3)}, {'Олена': datetime.date(2023, 9, 8)},
-         {'Андрій': datetime.date(2023, 8, 21)}, {'Зоя': datetime.date(2023, 8, 14)},
-         {'Людмила': datetime.date(2023, 8, 19)}, {'Анна': datetime.date(2023, 8, 15)},
-         {'Володимир': datetime.date(2023, 8, 22)}, {'Ігор': datetime.date(2023, 8, 16)},
-         {'Мілана': datetime.date(2023, 8, 18)}]
-
-
-# def create_users_birthdays(users_names):
-#
-#     users_names = ['Олег', 'Катерина', 'Олександр', 'Тетяна', 'Дмитро', 'Антон', 'Віктор', 'Марія', 'Генадій', 'Олена',
-#                    'Андрій', 'Зоя', 'Людмила', 'Анна', 'Володимир', 'Ігор', 'Мілана']
-#
-#     users = []
-#
-#     for user in users_names:
-#         users.append({user: datetime.date.today() + datetime.timedelta(random.randint(1, 30))})
-#
-#     return users
-
+# users = [{'name': 'Олег', 'birthday': datetime.date(2023, 8, 24)},
+#          {'name': 'Катерина', 'birthday': datetime.date(2023, 9, 6)},
+#          {'name': 'Олександр', 'birthday': datetime.date(2023, 9, 3)},
+#          {'name': 'Тетяна', 'birthday': datetime.date(2023, 8, 21)},
+#          {'name': 'Дмитро', 'birthday': datetime.date(2023, 8, 22)},
+#          {'name': 'Антон', 'birthday': datetime.date(2023, 8, 27)},
+#          {'name': 'Віктор', 'birthday': datetime.date(2023, 8, 26)},
+#          {'name': 'Марія', 'birthday': datetime.date(2023, 8, 17)},
+#          {'name': 'Генадій', 'birthday': datetime.date(2023, 9, 3)},
+#          {'name': 'Олена', 'birthday': datetime.date(2023, 9, 8)},
+#          {'name': 'Андрій', 'birthday': datetime.date(2023, 8, 25)},
+#          {'name': 'Зоя', 'birthday': datetime.date(2023, 8, 14)},
+#          {'name': 'Людмила', 'birthday': datetime.date(2023, 8, 19)},
+#          {'name': 'Анна', 'birthday': datetime.date(2023, 8, 15)},
+#          {'name': 'Володимир', 'birthday': datetime.date(2023, 8, 22)},
+#          {'name': 'Ігор', 'birthday': datetime.date(2023, 8, 16)},
+#          {'name': 'Мілана', 'birthday': datetime.date(2023, 8, 28)}]
 
 def get_birthdays_per_week(users):
+
     current_date = datetime.date.today()
-    # current_date = datetime.date(year=2023, month=8, day=14) # start the search from Monday
+    # current_date = datetime.date(year=2023, month=8, day=21)  # start the search from Monday
     lucky_names = []
 
-    for shift_day in range(0, 7): # through 7 days, starting with the current day
+    for shift_day in range(0, 7):  # through 7 days, starting with the current day
         for user in users:
-            for name, birthday in user.items():
-                if birthday == current_date + datetime.timedelta(shift_day):
-                    lucky_names.append(name)
+            if user['birthday'] == current_date + datetime.timedelta(shift_day):
+                    lucky_names.append(user['name'])
 
         # if the current day is Saturday or Sunday, accumulate the names and move to the next day
         if (current_date + datetime.timedelta(shift_day)).weekday() > 4:
@@ -47,12 +40,11 @@ def get_birthdays_per_week(users):
 
     # output names for Saturday and Sunday, if the search started on Monday
     if lucky_names:
-        print(f'{datetime.date(year=2023, month=1, day=2).strftime("%A")}: ', end='')
+        print(f'{datetime.date(year=2023, month=1, day=2).strftime("%A")}: ', end='') # just word Monday on all languages
         print(*lucky_names, sep=', ')
 
-def main():
-    get_birthdays_per_week(users)
-
-
-if __name__ == '__main__':
-    main()
+# def main():
+#     get_birthdays_per_week(users)
+#
+# if __name__ == '__main__':
+#     main()
