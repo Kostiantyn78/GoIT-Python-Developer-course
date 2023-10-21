@@ -86,9 +86,9 @@ class AddressBook(UserDict):
 def main():
 
     book = AddressBook()
+    alex = Record('alex')
+    alex.add_phone('1234567890')
+    print(alex.phones[0])
 
 if __name__ == "__main__":
     main()
-
-
-

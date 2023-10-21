@@ -80,7 +80,7 @@ class TestHomeWork10(unittest.TestCase):
         """
         if hasattr(main, "Name"):
             assert (
-                main.Name.__base__ == main.Field
+                    main.Name.__base__ == main.Field
             ), """3. Класс Name не наслідується від класу Field в коді"""
         else:
             raise AssertionError(
@@ -99,7 +99,7 @@ class TestHomeWork10(unittest.TestCase):
         """
         if hasattr(main, "Phone"):
             assert (
-                main.Phone.__base__ == main.Field
+                    main.Phone.__base__ == main.Field
             ), """5. Класс Phone не наслідується від класу Field в коді"""
         else:
             raise AssertionError(

@@ -277,7 +277,7 @@ def main():
     - show all
     - good bye, close, exit -> EXIT
     - set birthday <name> <dd/mm/yyyy>
-    - erase_number <name> <phone number>    
+    - erase_number <name> <phone number>
             ''')
 
     COMMANDS = {
@@ -292,7 +292,7 @@ def main():
         'set birthday': set_birthday,
         'when birthday': when_birthday,
         'del': del_contact,
-        'erase number': erase_number
+        'erase number': erase_number,
     }
 
     while True:
