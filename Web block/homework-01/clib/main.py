@@ -1,5 +1,6 @@
-from clib import functions
-from clib.sort import main as sort
+import functions
+from sort import main as sort
+from classes import console_massage
 
 
 def main():
@@ -33,23 +34,23 @@ def main():
                         'close': functions.end,
                         }
 
-    print("Welcome! I'm CLI - your personal Command Line Interface Bot.")
-    print("Please enter your command or type 'help' to see the full list of available commands.")
+    console_massage.out_text("Welcome! I'm CLI - your personal Command Line Interface Bot.")
+    console_massage.out_text("Please enter your command or type 'help' to see the full list of available commands.")
 
     while True:
         user_input = input('Enter command: ')
         if user_input.lower() in handler_commands.keys():
             output = handler_commands[user_input.lower()]()
-            print(output)
+            console_massage.out_text(output)
             if output == 'Good bye! Thank you for using CLIB.':
                 functions.write_file()
                 exit()
         else:
             command, args = functions.parse(user_input, handler_commands.keys())
             if command:
-                print(handler_commands[command](*args))
+                console_massage.out_text(handler_commands[command](*args))
             else:
-                print("Unknown command. Please type 'help' to get the full list of available commands.")
+                console_massage.out_text("Unknown command. Please type 'help' to get the full list of available commands.")
 
 
 if __name__ == '__main__':

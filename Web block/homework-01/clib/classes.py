@@ -221,6 +221,17 @@ class Note:
         self.title = title
 
 
+class Message(ABC):
+
+    @abstractmethod
+    def out_text(self, text):
+        pass
+
+class ConsoleMessage(Message):
+
+    def out_text(self, text):
+        print(text)
+
 class Address(Field):
     pass
 
@@ -240,6 +251,6 @@ class EmailInvalidFormatError(Exception):
 class NoteInputInvalidFormatError(Exception):
     pass
 
-
 address_book = AddressBook()
 note_book = Notes()
+console_massage = ConsoleMessage()
