@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "web-homework-08-01"
+version = "0.1.0"
+description = ""
+authors = ["Kostiantyn78 <ksgorishniy@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pymongo = {extras = ["srv", "tls"], version = "^4.6.1"}
+mongoengine = "^0.27.0"
+redis = "^5.0.1"
+redis-lru = "^0.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
