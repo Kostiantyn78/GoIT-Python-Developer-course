@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "FastAPI_Django_ENV_Cloudinary"
+version = "0.1.0"
+description = ""
+authors = ["Kostiantyn78 <ksgorishniy@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.109.0"
+sqlalchemy = "^2.0.25"
+asyncpg = "^0.29.0"
+uvicorn = "^0.27.0.post1"
+alembic = "^1.13.1"
+libgravatar = "^1.0.4"
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+pydantic = {extras = ["email"], version = "^2.6.0"}
+python-multipart = "^0.0.7"
+redis = "^5.0.1"
+fastapi-limiter = "^0.1.6"
+cloudinary = "^1.38.0"
+fastapi-mail = "^1.4.1"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
